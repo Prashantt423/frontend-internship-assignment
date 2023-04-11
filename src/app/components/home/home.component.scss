@@ -1,6 +1,5 @@
 .header {
-  @apply
-  tw-flex
+  @apply tw-flex
   tw-flex-row
   tw-justify-between
   tw-items-center
@@ -11,21 +10,100 @@
 }
 
 .search-button {
-  @apply
-  tw-border 
+  @apply tw-border 
   tw-border-solid 
   tw-border-dark-border
   tw-rounded-4-px
   tw-flex
   tw-justify-center
   tw-h-60-px
-  tw-w-200-px
+  tw-w-200-px;
 }
 
 .trending-subjects {
-  @apply
-  tw-bg-table-header-bg
+  @apply tw-bg-table-header-bg
   tw-p-12-px
   tw-rounded-4-px
-  tw-shadow-lg
+  tw-shadow-lg;
+}
+
+.pagination {
+  display: flex;
+  padding: 2rem;
+  gap: 5rem;
+  align-items: center;
+}
+
+.link:hover{
+  cursor: pointer;
+  color: red;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+  
+}
+.ask{
+  font-size: 12px !important;
+  margin-left: auto;
+  text-align: center;
+  margin-right: 0.225rem;
+  margin-top: -1.4rem;
+  color: rgb(166, 164, 164);
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 0px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

@@ -1,6 +1,16 @@
+<a routerLink="/">Back to homepage</a>
+<div *ngIf="isLoading" class="loaderBox">
+  <div class="loader"></div>
+</div>
+<div style="margin-left: 2rem" *ngIf="errorMessage !== ''" class="error">
+  <p style="color: red; font-size: 18px; font-weight: 800">
+    {{ errorMessage }}
+  </p>
+</div>
 <div *ngIf="allBooks.length > 0">
   <front-end-internship-assignment-table-view
   [booksList]="allBooks"
   [subjectName]="subjectName"
+  [isSearch]="false"
   ></front-end-internship-assignment-table-view>
 </div>
